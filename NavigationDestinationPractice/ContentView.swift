@@ -9,7 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("HI")
+        NavigationStack{
+            Text("This is the content view")
+            NavigationLink(value: 3)
+            {
+                Text("Press here")
+            }
+            .navigationDestination(for: Int.self) { val in
+                NavDestViewLevel1()
+            }
+        }
     }
 }
 
